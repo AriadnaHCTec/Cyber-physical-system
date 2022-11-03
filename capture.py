@@ -23,7 +23,7 @@ while(True):
 		print("saving good image")
 	elif key == ord('n'):
 		cv2.imwrite("wrong/"+str(datetime.now())+".png",frame)
-		print("saving good image")
+		print("saving bad image")
 	elif key == ord('q'):
 		break
   
