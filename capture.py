@@ -4,7 +4,7 @@ import cv2
 from datetime import datetime
   
 vid = cv2.VideoCapture(0)
-counter = 0
+
 while(True):
       
 	# Capture the video frame
@@ -17,10 +17,14 @@ while(True):
 	# the 'q' button is set as the
 	# quitting button you may use any
 	# desired button of your choice
-	if cv2.waitKey(1) & 0xFF == ord('s'):
-		cv2.imwrite(str(datetime.now())+".png",frame)
-		counter+=1
-	elif cv2.waitKey(1) & 0xFF == ord('q'):
+	key = cv2.waitKey(1) & 0xFF
+	if key == ord('s'):
+		cv2.imwrite("good/"+str(datetime.now())+".png",frame)		
+		print("saving good image")
+	elif key == ord('n'):
+		cv2.imwrite("wrong/"+str(datetime.now())+".png",frame)
+		print("saving good image")
+	elif key == ord('q'):
 		break
   
 # After the loop release the cap object
