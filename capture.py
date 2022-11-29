@@ -4,7 +4,7 @@ import cv2
 from datetime import datetime
   
 vid = cv2.VideoCapture(0)
-
+#vid.set(cv2.CAP_PROP_AUTOFOCUS, 0) # turn the autofocus off
 while(True):
       
 	# Capture the video frame
@@ -13,7 +13,7 @@ while(True):
 	#400:660, 400:1190
 	#cv2.rectangle(frame,(0,0),(100,200),(0,255,0),3)
 	cut = frame[450:660, 400:1090].copy()
-	cv2.rectangle(frame,(400,450),(1090,660),(0,255,0),3)
+	cv2.rectangle(frame,(400,450),(1030,660),(0,255,0),3)
 	# Display the resulting frame
 	cv2.imshow('frame', frame)
 	
